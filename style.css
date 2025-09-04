@@ -44,9 +44,7 @@ h1 {
 #counter {
     font-size: 84px;
     font-weight: 800px;
-    background: linear-gradient(135deg, #6b46c1, #2563eb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-color: #6b46c1;
     background-clip: text;
     margin: 32px 0;
     line-height: 1;
@@ -72,7 +70,7 @@ button {
 }
 
 #clickButton {
-    background: linear-gradient(135deg, #6b46c1, #2563eb);
+    background-color: #6b46c1;
     color: white;
     box-shadow: 0 4px 24px rgba(107, 70, 193, 0.3);
 }
