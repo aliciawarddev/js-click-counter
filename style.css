@@ -1,61 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 60px;
+    border-radius: 24px;
+    box-shadow: 
+        0 20px 80px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
     text-align: center;
+    min-width: 350px;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 32px;
 }
 
 #counter {
-    font-size: 48px;
-    color: #007bff;
-    margin: 30px 0;
-    font-weight: bold;
+    font-size: 84px;
+    font-weight: 800px;
+    background: linear-gradient(135deg, #6b46c1, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 32px 0;
+    line-height: 1;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
 }
 
 button {
-    font-size: 18px;
-    padding: 12px 24px;
-    margin: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 28px;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: transform 0.1s;
-}
-
-button:active {
-    transform: scale(0.95);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 #clickButton {
-    background-color: #28a745;
+    background: linear-gradient(135deg, #6b46c1, #2563eb);
     color: white;
+    box-shadow: 0 4px 24px rgba(107, 70, 193, 0.3);
 }
 
 #clickButton:hover {
-    background-color: #218838;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 32px rgba(107, 70, 193, 0.4);
 }
 
 #resetButton {
-    background-color: #dc3545;
-    color: white;
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
 }
 
 #resetButton:hover {
-    background-color: #c82333;
+    background: #edf2f7;
+    border-color: #cbd5e0;
+    transform: translateY(-2px);
 }
