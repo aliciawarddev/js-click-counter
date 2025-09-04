@@ -4,15 +4,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
         <title>Button Click Counter</title>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!-- HTML Structure-->
         <div class="container">
+            
             <h1>Click Counter</h1>
-            <p class="subtitle">Track your clicks in style</p>
-            <div id="counter">0</div>
+            <p class="subtitle">How high can you go?</p>
+            
+            <div class="counter-wrapper">
+                <div class="counter-background"></div>
+                <div id="counter">0</div>
+                <div class="counter-label">CLICKS</div>
+            </div>
+            
             <div class="button-group">
                 <button id="clickButton">Click Me</button>
                 <button id="resetButton">Reset</button>

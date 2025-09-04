@@ -1,93 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
-    font-family: 'Inter', sans-serif;
-    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    background: #f5f1eb;  /* Warm off-white, very MCM */
+    /* Alternative backgrounds:
+       #e8e2d5 - Warmer beige
+       #f0ebe5 - Light taupe
+       #d4cfc7 - Deeper warm gray
+       #faf8f3 - Almost white cream
+    */
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 50px 60px;
-    border-radius: 24px;
-    box-shadow: 
-        0 20px 80px rgba(0, 0, 0, 0.12),
-        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    background: white;
+    padding: 60px 80px;
+    border-radius: 12px;  /* Subtle rounding, more rectangular */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);  /* Soft shadow */
     text-align: center;
-    min-width: 350px;
+    position: relative;
+    border: 1px solid #e5e1db;  /* Subtle border */
 }
 
 h1 {
-    font-size: 24px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
     font-weight: 600;
-    color: #2d3748;
+    color: #2c3e50;  /* Dark blue-gray */
     margin-bottom: 8px;
     letter-spacing: -0.5px;
 }
 
 .subtitle {
-    color: #718096;
-    font-size: 14px;
-    margin-bottom: 32px;
+    color: #8b8680;  /* Warm gray */
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+/* Counter styling - simple and clean */
+.counter-wrapper {
+    position: relative;
+    margin: 40px 0 50px;
 }
 
 #counter {
+    font-family: 'Space Mono', monospace;
     font-size: 84px;
-    font-weight: 800px;
-    background-color: #6b46c1;
-    background-clip: text;
-    margin: 32px 0;
+    font-weight: 700;
+    color: #14b8a6;
     line-height: 1;
-    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    display: inline-block;
 }
 
+.counter-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #8b8680;
+    margin-top: 12px;
+}
+
+/* Button group */
 .button-group {
     display: flex;
-    gap: 12px;
+    gap: 20px;
     justify-content: center;
 }
 
+/* Button styles - clean with borders */
 button {
+    font-family: 'Rubik', sans-serif;
     font-size: 14px;
-    font-weight: 600;
-    padding: 12px 28px;
-    border: none;
-    border-radius: 12px;
+    font-weight: 500;
+    padding: 14px 32px;
+    border-radius: 50px;  /* Subtle rounding */
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 }
 
+button:hover {
+    transform: scale(1.05);  /* Simple scale increase */
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Click button - teal with border */
 #clickButton {
-    background-color: #6b46c1;
+    background: #14b8a6;
     color: white;
-    box-shadow: 0 4px 24px rgba(107, 70, 193, 0.3);
+    border: 2px solid #14b8a6;
 }
 
 #clickButton:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 32px rgba(107, 70, 193, 0.4);
+    background: #10a795;  /* Slightly darker */
+    border-color: #10a795;
 }
 
+/* Reset button - grey with same style as click button */
 #resetButton {
-    background: #f7fafc;
-    color: #4a5568;
-    border: 2px solid #e2e8f0;
+    background: #a8a29e;  /* Stone-300 - warm light grey */
+    color: white;
+    border: 2px solid #a8a29e;
 }
 
 #resetButton:hover {
-    background: #edf2f7;
-    border-color: #cbd5e0;
-    transform: translateY(-2px);
+    background: #87817c;  /* Slightly darker */
+    border-color: #87817c;
 }
