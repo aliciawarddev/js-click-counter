@@ -5,28 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Button Click Counter</title>
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+
+        <!-- Google Fonts - Simplified -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        
         <!-- Emoji Favicon -->
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%2314b8a6%22/><text x=%2216%22 y=%2222%22 font-family=%22Arial%22 font-size=%2218%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>+1</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%2387a878%22/><text x=%2216%22 y=%2222%22 font-family=%22Arial%22 font-size=%2218%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>+1</text></svg>">
     </head>
     <body>
         <div class="container">
             
+            <!-- Title & Subtitle-->
             <h1>Click Counter</h1>
             <p class="subtitle">How high can you go?</p>
             
+            <!-- Counter -->
             <div class="counter-wrapper">
                 <div class="counter-background"></div>
                 <div id="counter">0</div>
-                <div class="counter-label">CLICKS</div>
             </div>
+
+            <!-- Milestone Message-->
+             <p id="milestone" class="milestone"></p>
             
+             <!-- Button-->
             <div class="button-group">
                 <button id="clickButton">Click Me</button>
                 <button id="resetButton">Reset</button>
