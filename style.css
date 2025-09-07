@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f5f1eb; 
+    background: #f0ece6; 
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><line x1="0" y1="40" x2="40" y2="0" stroke="%2387a878" stroke-width="0.5" opacity="0.15"/></svg>');
     background-size: 40px 40px;
 }
@@ -19,17 +19,23 @@ body {
     background: white;
     padding: 50px 60px;
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);  /* Soft shadow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
     position: relative;
-    border: 1px solid #87a878;  /* Subtle border */
+    /* Remove border-image - it doesn't work with border-radius */
+    border: 2px solid transparent;
+    background-image: 
+        linear-gradient(white, white),
+        linear-gradient(135deg, #87a878, #b89a8c);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 36px;
     font-weight: 600;
-    color: #2c3e50;  /* Dark blue-gray */
+    color: #4a453f;  /* Dark blue-gray */
     margin-bottom: 8px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -60,29 +66,24 @@ h1 {
     position: relative;
     display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;  /* Smooth animations */
-}
-
-/* Animation class for number changes */
-#counter.pop {
-    animation: numberPop 0.3s ease;
-}
-
-@keyframes numberPop {
-    0% { transform: scale(1); color: #87a878; }
-    50% { transform: scale(1.05); color: #6b8a5a; }
-    100% { transform: scale(1); color: #87a878; }
+    background: linear-gradient(135deg, #87a878, #6b8a5a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Milestone */
 .milestone {
     height: 20px;
     margin-bottom: 20px;
-    color: #c65d3c;
-    font-size: 14px;
+    color: #7a756c; 
+    font-size: 12px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    text-transform: uppercase;
+    opacity: 0.7 when shown;
 }
 
 .milestone.show {
@@ -113,18 +114,18 @@ button {
 
 button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);  /* Smaller blur, darker */
+    box-shadow: 0 2px 4px rgba(135, 168, 120, 0.15);  /* Tinted sage shadow, tighter */
 }
 
 button:active {
     transform: translateY(0);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);  /* Very tight shadow */
+    box-shadow: 0 1px 2px rgba(135, 168, 120, 0.1);  /* Very subtle */
 }
 
 /* Click button - teal with border */
 #clickButton {
     background: white;
-    color: #87a878;
+    color: #87a878;  /* Keep sage */
     border-color: #87a878;
 }
 
@@ -133,15 +134,79 @@ button:active {
     color: white;
 }
 
-/* Reset button - grey with same style as click button */
+#clickButton:active {
+    transform: translateY(0) scale(0.98);  /* Tiny scale reduction */
+    background: #7a9c6b;  /* Slightly darker green while pressed */
+}
+
 #resetButton {
     background: white;
-    color: #7a756c;
-    border-color: #a8a29e;
+    color: #b89a8c;  /* Muted brown-terracotta */
+    border-color: #b89a8c;  /* Lighter, warmer */
 }
 
 #resetButton:hover {
-    background: #a8a29e;  /* Solid fill on hover */
+    background: #b89a8c;  /* Subtle warm brown */
     color: white;
-    border-color: #a8a29e;
+    border-color: #b89a8c;
+}
+
+#resetButton:active {
+    transform: translateY(0) scale(0.98);  /* Same tiny scale reduction */
+    background: #a0897d;  /* Slightly darker brown while pressed */
+}
+
+/* Add media query for mobile devices */
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
+    
+    .container {
+        padding: 30px 25px;
+        border-radius: 12px;  /* Slightly more rounded on mobile */
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    .subtitle {
+        font-size: 11px;
+        margin-bottom: 30px;
+    }
+    
+    #counter {
+        font-size: 72px;  /* Smaller on mobile */
+    }
+    
+    .counter-wrapper {
+        margin: 30px 0 20px;
+    }
+    
+    .button-group {
+        flex-direction: column;  /* Stack buttons vertically */
+        gap: 12px;
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;  /* Full width buttons on mobile */
+        padding: 16px 24px;  /* Taller for easier tapping */
+    }
+    
+    .milestone {
+        font-size: 12px;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 40px 45px;
+    }
+    
+    #counter {
+        font-size: 84px;
+    }
 }

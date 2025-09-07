@@ -2,7 +2,7 @@
 let count = 0; //'let' allows this value to change (vs 'const' which doesn't)
 
 // Get references to HTML elements
-//document.getElementByID() finds elementd by their ID attribute
+//document.getElementById() finds elements by their ID attribute
 const counterDisplay = document.getElementById('counter');      // The <div> showing the number
 const clickButton = document.getElementById('clickButton');     // The "Click Me" button
 const resetButton = document.getElementById('resetButton');     // The "Reset" button
@@ -11,13 +11,13 @@ const milestone = document.getElementById('milestone');         // Milestone
 // Milestone messages object - defines special messages at specific counts
 // Keys are the count values, values are the messages to display
 const milestones = {
-    10: "Nice start!",
-    25: "Quarter century!",
-    50: "Halfway to 100!",
-    100: "Triple digits!",
-    250: "Impressive dedication!",
-    500: "Half a thousand!",
-    1000: "You've reached 1K!"
+    10: "10 clicks",
+    25: "25 clicks", 
+    50: "50 clicks",
+    100: "100 clicks",
+    250: "250 clicks",
+    500: "500 clicks",
+    1000: "1,000 clicks"
 }
 
 // Formats large numbers with commas for readability
