@@ -6,11 +6,43 @@ let count = 0; //'let' allows this value to change (vs 'const' which doesn't)
 const counterDisplay = document.getElementById('counter');      // The <div> showing the number
 const clickButton = document.getElementById('clickButton');     // The "Click Me" button
 const resetButton = document.getElementById('resetButton');     // The "Reset" button
+const milestone = document.getElementById('milestone');         // Milestone
 
-// Updates the number shown on screen
-// Takes the curretn count value and displays it in the counter div
+// Milestone messages object - defines special messages at specific counts
+// Keys are the count values, values are the messages to display
+const milestones = {
+    10: "Nice start!",
+    25: "Quarter century!",
+    50: "Halfway to 100!",
+    100: "Triple digits!",
+    250: "Impressive dedication!",
+    500: "Half a thousand!",
+    1000: "You've reached 1K!"
+}
+
+// Formats large numbers with commas for readability
+// Example 1000 becomes "1,000"
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Updates the display with animation
 function updateDisplay() {
-    counterDisplay.textContent = count;     // textContent changes the text inside an element
+    counterDisplay.textContent = formatNumber(count);
+    
+    // Add pop animation
+    counterDisplay.classList.remove('pop');
+    void counterDisplay.offsetWidth; // Force reflow
+    counterDisplay.classList.add('pop');
+    
+    // Check for milestones
+    if (milestones[count]) {
+        milestone.textContent = milestones[count];
+        milestone.classList.add('show');
+        setTimeout(() => {
+            milestone.classList.remove('show');
+        }, 3000);
+    }
 }
 
 // Handles the main click button
@@ -23,9 +55,18 @@ function handleClick() {
 // Handles the reset button
 // Resets counter to 0 and updates display
 function handleReset() {
-    count = 0;              // Reset to 0
-    updateDisplay();        // Show 0
+    count = 0;
+    milestone.classList.remove('show');
+    updateDisplay();
 }
+
+// Keyboard support - spacebar clicks
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        e.preventDefault();
+        handleClick();
+    }
+});
 
 // Connect buttons to their functions
 // addEventListener('event', function) listens for user interactions

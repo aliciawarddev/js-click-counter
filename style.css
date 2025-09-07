@@ -10,118 +10,138 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f5f1eb;  /* Warm off-white, very MCM */
-    /* Alternative backgrounds:
-       #e8e2d5 - Warmer beige
-       #f0ebe5 - Light taupe
-       #d4cfc7 - Deeper warm gray
-       #faf8f3 - Almost white cream
-    */
+    background: #f5f1eb; 
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><line x1="0" y1="40" x2="40" y2="0" stroke="%2387a878" stroke-width="0.5" opacity="0.15"/></svg>');
+    background-size: 40px 40px;
 }
 
 .container {
     background: white;
-    padding: 60px 80px;
-    border-radius: 12px;  /* Subtle rounding, more rectangular */
+    padding: 50px 60px;
+    border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);  /* Soft shadow */
     text-align: center;
     position: relative;
-    border: 1px solid #e5e1db;  /* Subtle border */
+    border: 1px solid #87a878;  /* Subtle border */
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 600;
     color: #2c3e50;  /* Dark blue-gray */
     margin-bottom: 8px;
-    letter-spacing: -0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .subtitle {
     font-family: 'Inter', sans-serif;
-    color: #8b8680;  /* Warm gray */
-    font-size: 12.5px;
-    font-weight: 600;
+    color: #7a756c;
+    font-size: 13px;
+    font-weight: 400;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 40px;
 }
 
-/* Counter styling - simple and clean */
+/* Counter */
 .counter-wrapper {
     position: relative;
-    margin: 40px 0 50px;
+    margin: 40px 0 30px;
 }
 
 #counter {
     font-family: 'Oswald', sans-serif;
-    font-size: 84px;
-    font-weight: 700;
-    color: #14b8a6;
+    font-size: 96px;
+    font-weight: 800;
+    color: #87a878;
     line-height: 1;
     position: relative;
     display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;  /* Smooth animations */
 }
 
-.counter-label {
-    font-family: 'Inter', sans-serif; 
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    color: #8b8680;
-    margin-top: 12px;
+/* Animation class for number changes */
+#counter.pop {
+    animation: numberPop 0.3s ease;
+}
+
+@keyframes numberPop {
+    0% { transform: scale(1); color: #87a878; }
+    50% { transform: scale(1.05); color: #6b8a5a; }
+    100% { transform: scale(1); color: #87a878; }
+}
+
+/* Milestone */
+.milestone {
+    height: 20px;
+    margin-bottom: 20px;
+    color: #c65d3c;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.milestone.show {
+    opacity: 1;
 }
 
 /* Button group */
 .button-group {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     justify-content: center;
 }
 
 /* Button styles - clean with borders */
 button {
     font-family: 'Oswald', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    padding: 12px 30px;
-    border-radius: 50px;  /* Subtle rounding */
+    padding: 14px 32px;
+    border-radius: 6px;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    letter-spacing: 2px;
+    transition:  all 0.3s ease;
     position: relative;
+    border: 2px solid;
 }
 
 button:hover {
-    transform: scale(1.05);  /* Simple scale increase */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);  /* Smaller blur, darker */
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);  /* Very tight shadow */
 }
 
 /* Click button - teal with border */
 #clickButton {
-    background: #14b8a6;
-    color: white;
-    border: 2px solid #14b8a6;
+    background: white;
+    color: #87a878;
+    border-color: #87a878;
 }
 
 #clickButton:hover {
-    background: #10a795;  /* Slightly darker */
-    border-color: #10a795;
+    background: #87a878;  /* Solid fill on hover */
+    color: white;
 }
 
 /* Reset button - grey with same style as click button */
 #resetButton {
-    background: #a8a29e;  /* Stone-300 - warm light grey */
-    color: white;
-    border: 2px solid #a8a29e;
+    background: white;
+    color: #7a756c;
+    border-color: #a8a29e;
 }
 
 #resetButton:hover {
-    background: #87817c;  /* Slightly darker */
-    border-color: #87817c;
+    background: #a8a29e;  /* Solid fill on hover */
+    color: white;
+    border-color: #a8a29e;
 }
